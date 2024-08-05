@@ -1,0 +1,60 @@
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore logs
+*.log
+npm-debug.log*
+
+# Ignore environment variables
+.env
+
+# Ignore build outputs
+/dist
+/build
+/out
+coverage/
+
+# Ignore temporary files and backups
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Ignore dependency directories
+/vendor
+/.bundle
+/.sass-cache
+/.vscode
+.idea/
+
+# Ignore compiled files
+*.o
+*.obj
+*.so
+*.exe
+*.dll
+*.class
+
+# Ignore Python files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore Java files
+*.jar
+*.war
+
+# Ignore specific config files
+config/settings.local.php
+
+# Ignore IDE/editor specific files
+.vscode/
+.idea/
+
+# Ignore custom files
+custom-folder/

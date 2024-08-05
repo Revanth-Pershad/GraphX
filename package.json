@@ -1,0 +1,17 @@
+{
+  "name": "graphx",
+  "version": "1.0.0",
+  "description": "An In-Memory Graph Database",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "P Revanth Pershad",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
