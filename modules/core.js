@@ -1,8 +1,8 @@
-export const GraphDB = {};
-GraphDB.G = {};
+export const GraphX = {};
+GraphX.G = {};
 
-GraphDB.graph = function(V, E) { 
-  var graph = Object.create(GraphDB.G);
+GraphX.graph = function(V, E) { 
+  var graph = Object.create(GraphX.G);
   graph.edges = [];
   graph.vertices = [];
   graph.vertexIndex = {};
