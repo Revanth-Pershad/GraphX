@@ -1,14 +1,12 @@
-// src/vertex.ts
-
 import { Edge } from './edge';
 
-export class Vertex<T> {
-  id: number;
-  data: T;
-  incomingEdges: Edge<any, T>[];
-  outgoingEdges: Edge<T, any>[];
+export class Vertex {
+  id: any;
+  data: any;
+  incomingEdges: Edge[];
+  outgoingEdges: Edge[];
 
-  constructor(id: number, data: T) {
+  constructor(id: any, data: any) {
     this.id = id;
     this.data = data;
     this.incomingEdges = [];

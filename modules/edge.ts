@@ -1,19 +1,15 @@
-// src/edge.ts
-
 import { Vertex } from './vertex';
 
-export class Edge<TFrom, TTo> {
+export class Edge {
   id: number;
-  from: Vertex<TFrom>;
-  to: Vertex<TTo>;
+  from: any;
+  to: any;
   type: string;
-  data: any;
 
-  constructor(id: number, from: Vertex<TFrom>, to: Vertex<TTo>, type: string, data: any = {}) {
+  constructor(id: number, from: any, to: any, type: string) {
     this.id = id;
     this.from = from;
     this.to = to;
     this.type = type;
-    this.data = data;
   }
 }
