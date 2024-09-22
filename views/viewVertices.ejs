@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Vertices</title>
+</head>
+<body>
+  <h1>Vertices in Graph <%= graphId %></h1>
+  <ul>
+    <% vertices.forEach(vertex => { %>
+      <li>Vertex ID: <%= vertex.id %>, Data: <%= vertex.data %></li>
+    <% }) %>
+  </ul>
+  <a href="/graph/<%= graphId %>/vertex/add">Add another vertex</a>
+</body>
+</html>

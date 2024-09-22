@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Edge</title>
+</head>
+<body>
+  <h1>Add an Edge to Graph <%= graphId %></h1>
+  <form action="/graph/<%= graphId %>/edge/add" method="POST">
+    <label for="fromId">From Vertex ID:</label>
+    <input type="text" id="fromId" name="fromId" required>
+
+    <label for="toId">To Vertex ID:</label>
+    <input type="text" id="toId" name="toId" required>
+
+    <label for="type">Edge Type:</label>
+    <input type="text" id="type" name="type" required>
+
+    <button type="submit">Add Edge</button>
+  </form>
+</body>
+</html>

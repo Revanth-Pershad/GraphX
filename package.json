@@ -3,15 +3,25 @@
   "version": "1.0.0",
   "description": "An In-Memory Graph Database",
   "main": "index.js",
+  "type": "module",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "dev": "npm run build && node dest/server.js"
   },
   "author": "P Revanth Pershad",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^5.5.4"
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0"
   }
 }
