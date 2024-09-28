@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graph Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    form {
+      margin: 20px 0;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Graph Manager</h1>
+  </header>
+  <div class="container">
+    <h2>Welcome to the Graph Manager</h2>
+    <p>Create a new graph or manage existing ones.</p>
+    
+    <form id="createGraphForm">
+      <label for="graphId">Graph ID:</label>
+      <input type="text" id="graphId" name="graphId" placeholder="Enter Graph ID" required>
+      
+      <label for="classType">Identifier Class Type:</label>
+      <input type="text" id="classType" name="classType" placeholder="Enter Class Type" required>
+      
+      <button type="button" onclick="createGraph()">Create Graph</button>
+    </form>
+
+    <form id="manageGraphForm">
+      <label for="vertexId">Vertex ID:</label>
+      <input type="text" id="vertexId" name="vertexId" placeholder="Enter Vertex ID" required>
+      
+      <label for="vertexData">Vertex Data:</label>
+      <input type="text" id="vertexData" name="vertexData" placeholder="Enter Vertex Data" required>
+      
+      <button type="button" onclick="addVertex()">Add Vertex</button>
+    </form>
+    
+    <form id="edgeForm">
+      <label for="fromVertex">From Vertex ID:</label>
+      <input type="text" id="fromVertex" name="fromVertex" placeholder="Enter From Vertex ID" required>
+      
+      <label for="toVertex">To Vertex ID:</label>
+      <input type="text" id="toVertex" name="toVertex" placeholder="Enter To Vertex ID" required>
+      
+      <button type="button" onclick="addEdge()">Add Edge</button>
+    </form>
+  </div>
+
+  <script>
+    async function createGraph() {
+      const graphId = document.getElementById('graphId').value;
+      const classType = document.getElementById('classType').value;
+
+      const response = await fetch('/createGraph', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ graphId, classType })
+      });
+
+      const result = await response.json();
+      alert(result.message);
+    }
+
+    async function addVertex() {
+      const graphId = document.getElementById('graphId').value;
+      const vertexId = document.getElementById('vertexId').value;
+      const vertexData = document.getElementById('vertexData').value;
+
+      const response = await fetch('/addVertex', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ graphId, vertexId, vertexData })
+      });
+
+      const result = await response.json();
+      alert(result.message);
+    }
+
+    async function addEdge() {
+      const graphId = document.getElementById('graphId').value;
+      const fromVertex = document.getElementById('fromVertex').value;
+      const toVertex = document.getElementById('toVertex').value;
+
+      const response = await fetch('/addEdge', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ graphId, fromVertex, toVertex })
+      });
+
+      const result = await response.json();
+      alert(result.message);
+    }
+  </script>
+</body>
+</html>
