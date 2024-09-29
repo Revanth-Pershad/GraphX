@@ -1,4 +1,4 @@
-import { Edge } from './edge';
+import { Edge } from './edge.js';
 
 export class Vertex {
   id: any;

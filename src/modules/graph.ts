@@ -1,5 +1,5 @@
-import { Vertex } from "./vertex";
-import { Edge } from "./edge";
+import { Vertex } from "./vertex.js";
+import { Edge } from "./edge.js";
 
 export class Graph {
   vertices: Map<any, Vertex>;

@@ -1,5 +1,5 @@
-import { Vertex } from './vertex';
-import { Graph } from './graph';
+import { Vertex } from './vertex.js';
+import { Graph } from './graph.js';
 
 export class VertexQuery {
   private graph: Graph;

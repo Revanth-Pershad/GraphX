@@ -1,10 +1,15 @@
 import express, { Request, Response } from 'express';
 import path from 'path';
-import { GraphManager } from './modules/graphManager'; // Import your graph manager
+import { fileURLToPath } from 'url'; // Import necessary utilities
+import { GraphManager } from './modules/graphManager.js'; // Import your graph manager
 
 const app = express();
 const PORT = 8000;
 const graphManager = new GraphManager();
+
+// Create __dirname equivalent for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Middleware to parse JSON
 app.use(express.json());

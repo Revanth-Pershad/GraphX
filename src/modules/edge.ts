@@ -1,4 +1,4 @@
-import { Vertex } from './vertex';
+import { Vertex } from './vertex.js';
 
 export class Edge {
   id: number;

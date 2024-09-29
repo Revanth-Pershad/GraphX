@@ -1,4 +1,4 @@
-import { Graph } from './graph';
+import { Graph } from './graph.js';
 export class GraphManager {
     constructor() {
         this.graphs = new Map();
